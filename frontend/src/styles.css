@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+.app-button {
+  padding: 12px 40px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #f6d7e7 0%, #e767bc 100%);;
+  color: rgb(247, 247, 247);
+  
+  transition: all 0.25s ease;
+}
+
+.app-button:hover {
+  background: linear-gradient(135deg, #e767bc 0%, #e767bc 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(231, 103, 188, 0.45);
+  filter: brightness(1.05);
+}
+
+.app-button:active {
+    transform: translateY(0);
+}
+
+.app-button:disabled {
+  background: #f2e3ec;
+  color: #a38b96;
+  cursor: not-allowed;
+  box-shadow: none;
+}
