@@ -14,11 +14,12 @@
         </thead>
 
         <tbody>
-            <tr>
-                <td><a routerLink="/details/1">1</a></td>
-                <td>Toyota</td>
-                <td>Corolla</td>
-                <td>4</td>
+            <!-- Pillamos los datos de CarService -->
+            <tr *ngFor="let c of cars">
+                <td><a routerLink="['/details', c.id]">{{ c.id }}</a></td>
+                <td>{{ c.brand }}</td>
+                <td>{{ c.model }}</td>
+                <td>{{ c.total }}</td>
                 
                 <td>
                     <div class="action-menu">
