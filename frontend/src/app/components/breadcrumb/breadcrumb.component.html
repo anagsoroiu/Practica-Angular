@@ -1,3 +1,8 @@
 <nav class="breadcrumb">
-    <span>Inicio</span>
+    <a routerLink="/">Inicio</a>
+
+    <ng-container *ngFor="let part of breadcrumbParts; let i = index">
+        /
+        <span>{{ part }}</span>
+    </ng-container>
 </nav>
