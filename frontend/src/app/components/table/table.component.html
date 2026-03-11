@@ -1,0 +1,35 @@
+<div class="table-container">
+    <!-- Botón para crear un coche -->
+    <button appButton routerLink="/create">Crear coche</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Total</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><a routerLink="/details/1">1</a></td>
+                <td>Toyota</td>
+                <td>Corolla</td>
+                <td>4</td>
+                
+                <td>
+                    <div class="action-menu">
+                        <button class="action-button">Acciones</button>
+                        <div class="dropdown">
+                            <button>Editar</button>
+                            <button>Eliminar</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
