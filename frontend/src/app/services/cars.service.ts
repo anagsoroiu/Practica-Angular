@@ -2,11 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+export interface CarDetails {
+  price: number,
+  mileage: number,
+  manufactureYear: number,
+  licensePlate: string,
+  registrationDate: string
+}
+
 export interface Car {
   id: string,
   brand: string,
   model: string,
   total: number,
+  carDetails: CarDetails[];
 }
 
 @Injectable({

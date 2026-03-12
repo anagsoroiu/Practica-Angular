@@ -1,0 +1,41 @@
+<app-breadcrumb></app-breadcrumb>
+
+<div *ngIf="car" class="details-container">
+    <h3 class="details-title">{{ car.brand }} - {{ car.model }}</h3>
+    <div class="meta">
+        <p><strong>ID:</strong> {{ car.id }}</p>
+        <p><strong>Total:</strong> {{ car.total }}</p>
+    </div>
+
+    <p class="stock">Stock de coches</p>
+    <div class="card-table">
+        <table class="details-table">
+            <thead>
+                <tr>
+                    <th>Fecha de registro</th>
+                    <th>Año de fabricación</th>
+                    <th>Precio</th>
+                    <th>Kilometraje</th>
+                    <th>Matrícula</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let detail of car.carDetails">
+                    <td>{{ detail.registrationDate | date:'dd MMM yyyy' }}</td>
+                    <td>{{ detail.manufactureYear }}</td>
+                    <td>{{ detail.price | currency:'EUR':'symbol' }}</td>
+                    <td>
+                        <!-- Se mostrará en dos decimales -->
+                        {{ detail.mileage | number:'1.2-2' }}
+                        <span [ngClass]="detail.mileage | mileageStatus">
+                            {{ detail.mileage | mileageStatus }}
+                        </span>
+                    </td>
+                    <td>{{ detail.licensePlate }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
